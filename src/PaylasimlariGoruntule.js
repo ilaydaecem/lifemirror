@@ -17,7 +17,7 @@ const PaylasimlariGoruntule = ({ users }) => {
   }, []);
 
   const renderPostItem = ({ item }) => {
-    // Paylaşımı yapan kullanıcı bilgisini buluyoruz
+    
     const user = users.find((u) => u.id === item.userId);
 
     return (

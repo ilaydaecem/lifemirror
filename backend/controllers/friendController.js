@@ -1,4 +1,4 @@
-const Arkadas = require('./models/arkadas'); // Arkadas modelini buraya göre ayarlayın
+const Arkadas = require('./models/arkadas'); 
 
 async function arkadasVeritabanindanGetir(arkadasinKullaniciAdi) {
   try {

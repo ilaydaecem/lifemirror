@@ -11,7 +11,7 @@ const ProfilOlusturma = () => {
   const [error, setError] = useState('');
 
   const handleProfilOlustur = async () => {
-    // Gerekli bilgilerin kontrolü
+    
     if (name === '' || surname === '' || birthdate === '' || gender === '' || profileImage === null) {
       setError('Lütfen tüm bilgileri eksiksiz doldurun ve profil fotoğrafı yükleyin.');
       return;
@@ -29,7 +29,7 @@ const ProfilOlusturma = () => {
 
       console.log('Profil oluşturuldu:', response.data);
 
-      // Profil oluşturma işlemi başarılı ise ilgili sayfaya yönlendirme yapılabilir
+      
     } catch (error) {
       console.error('Profil oluşturma hatası:', error);
       setError('Profil oluşturma sırasında bir hata oluştu.');
@@ -37,15 +37,7 @@ const ProfilOlusturma = () => {
   };
 
   const handleImageUpload = () => {
-    // Profil fotoğrafı yükleme işlemi
-    // Burada uygun bir görsel yükleme mekanizması kullanılmalıdır
-    // setProfileImage ile yüklenen görsel, state'e kaydedilir
-
-    // Örnek olarak, profil fotoğrafını seçmek için bir dosya seçme işlemi kullanılıyor
-    // Bu kısım gerçek bir dosya seçme mekanizmasıyla değiştirilmelidir
-
-    // Aşağıdaki kod, basit bir örnek olarak yer almaktadır
-    // Kullanıcıya seçtiği dosyanın veri URI'si (base64) ile profil fotoğrafını gösterir
+   
 
     const image = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB...';
     setProfileImage(image);

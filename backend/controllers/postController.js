@@ -1,4 +1,4 @@
-const Post = require('./models/post'); // Post modelini buraya göre ayarlayın
+const Post = require('./models/post'); 
 
 async function kullaniciPaylasimlariGetir(kullaniciId) {
   try {

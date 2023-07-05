@@ -21,16 +21,16 @@ async function profilOlustur(req, res) {
 
   try {
     await client.connect();
-    const database = client.db("veritabaniAdi"); // Veritabanı adını buraya yazın
-    const koleksiyon = database.collection("profil"); // Koleksiyon adını buraya yazın
+    const database = client.db("veritabaniAdi"); 
+    const koleksiyon = database.collection("profil"); 
 
     const profil = {
-      kullaniciId: 1, // Bu kullanıcının kimlik numarası ya da diğer benzersiz kimliği olabilir.
+      kullaniciId: 1, 
       isim: isim,
       soyisim: soyisim,
       dogumTarihi: dogumTarihi,
       cinsiyet: cinsiyet,
-      // Diğer profil bilgileri burada olabilir.
+      
     };
 
     await koleksiyon.insertOne(profil);
@@ -54,8 +54,8 @@ async function profilDuzenle(req, res) {
 
   try {
     await client.connect();
-    const database = client.db("veritabaniAdi"); // Veritabanı adını buraya yazın
-    const koleksiyon = database.collection("profil"); // Koleksiyon adını buraya yazın
+    const database = client.db("veritabaniAdi"); 
+    const koleksiyon = database.collection("profil"); 
 
     const profil = await koleksiyon.findOne({ kullaniciId: kullaniciId });
 
@@ -67,7 +67,7 @@ async function profilDuzenle(req, res) {
     profil.soyisim = req.body.soyisim;
     profil.dogumTarihi = req.body.dogumTarihi;
     profil.cinsiyet = req.body.cinsiyet;
-    // Diğer profil bilgileri burada güncellenebilir.
+    
 
     await koleksiyon.updateOne({ kullaniciId: kullaniciId }, { $set: profil });
 

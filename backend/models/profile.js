@@ -1,4 +1,4 @@
-// models/profile.js
+
 
 const mongoose = require('mongoose');
 
@@ -7,7 +7,7 @@ const profileSchema = new mongoose.Schema({
   name: { type: String, required: true },
   bio: { type: String },
   profileImage: { type: String },
-  // Diğer profil bilgilerini buraya ekleyebilirsiniz
+
 });
 
 const Profile = mongoose.model('Profile', profileSchema);

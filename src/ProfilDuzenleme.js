@@ -10,14 +10,13 @@ const ProfilDuzenleme = () => {
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleProfilDuzenle = () => {
-    // Kullanıcının girdiği bilgilerin kontrolü
+    
     if (!name || !surname || !birthDate || !gender) {
       setErrorMessage('Lütfen tüm bilgileri doldurun.');
       return;
     }
 
-    // Profil düzenleme işlemi
-    // Burada ilgili API çağrıları veya veritabanı işlemleri yapılabilir
+  
 
     console.log('Profil düzenleme işlemi gerçekleştirildi:', {
       name,

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dbURI = 'mongodb://localhost:27017/lifemirrordatabase'; // Veritabanı URL'nizi buraya yazın
+const dbURI = 'mongodb+srv://ilayda:Huri2001@cluster0.vmmcjew.mongodb.net/?retryWrites=true&w=majority'; 
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -16,7 +16,7 @@ mongoose.connection.on('disconnected', () => {
   console.log('MongoDB bağlantısı kesildi');
 });
 
-// Uygulama kapatılırken MongoDB bağlantısını kapatmak için aşağıdaki kodu ekleyin
+
 process.on('SIGINT', () => {
   mongoose.connection.close(() => {
     console.log('MongoDB bağlantısı kapatıldı');

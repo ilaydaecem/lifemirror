@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Text } from 'react-native';
 import { login } from './AuthService';
 
-const TestLogin = () => {
+const TestLogin = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginResult, setLoginResult] = useState(null);
@@ -11,6 +11,7 @@ const TestLogin = () => {
     try {
       const result = await login(username, password);
       setLoginResult(result);
+            navigation.navigate('PostPage');
     } catch (error) {
       console.error('Giriş işlemi başarısız:', error);
     }

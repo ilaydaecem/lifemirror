@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const GirisYap = () => {
+const GirisYap = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,7 +15,8 @@ const GirisYap = () => {
       });
 
       console.log('Oturum açma başarılı:', response.data);
-      // Burada backend tarafından dönen cevaba göre kullanıcı arayüzüne yönlendirme yapabilirsiniz
+      
+      navigation.navigate('PostPage');
     } catch (error) {
       console.error('Oturum açma başarısız:', error);
       setError('Kullanıcı adı veya şifre hatalı');

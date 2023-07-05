@@ -10,20 +10,11 @@ const KayitOl = ({ navigation }) => {
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleKayitOl = async () => {
-    if (username === '' || password === '' || confirmPassword === '') {
-      setErrorMessage('Lütfen tüm bilgileri doldurun.');
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setErrorMessage('Şifreler eşleşmiyor.');
-      return;
-    }
-
+    
     try {
-      const response = await axios.post('http://localhost:3000/api/register', {
+      const response = await axios.post('BACKEND_URL/api/register', {
         username,
-        password
+        password,
       });
 
       console.log('Kayıt işlemi gerçekleştirildi:', response.data);
@@ -33,7 +24,6 @@ const KayitOl = ({ navigation }) => {
       setErrorMessage('Kayıt işlemi başarısız. Lütfen tekrar deneyin.');
     }
   };
-
   return (
     <View>
       {errorMessage !== '' && <Text>{errorMessage}</Text>}
